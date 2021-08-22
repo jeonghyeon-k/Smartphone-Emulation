@@ -2,7 +2,7 @@ const Navbar = {
   /**
    * Render the component content.
    */
-  render: async (resource) => {
+  render: async (resource, id, verb) => {
     let backbtn = "none";
     let newbtn  = "none";
     if (resource === null){
@@ -22,7 +22,7 @@ const Navbar = {
           back
         </a>
         <p class="navbar-time" id="time"></p>  
-        <a class="navbtn new" href="/#" style="display: ${newbtn};">
+        <a class="navbtn new" href="/#/${resource}/new" style="display: ${newbtn};">
           new
         </a>
       </nav>
@@ -51,7 +51,7 @@ const Navbar = {
     };
     // Set node content and update it every second.
     updateTime();
-    setInterval(updateTime, 1000);
+    // setInterval(updateTime, 1000);
   }
 };
 

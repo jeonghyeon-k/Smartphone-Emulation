@@ -12,8 +12,8 @@
     // Build request variable.
     const request = {
       resource: params[0] || null,
-      id: params[1] || null,
-      verb: params[2] || null
+      verb: params[1] || null,
+      id: params[2] || null
     };
   
     // Print it in the console.

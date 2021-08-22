@@ -7,6 +7,8 @@ import Memo from './views/pages/Memo.js';
 import Error404 from './views/pages/Error404.js';
 
 import Navbar from './views/components/Navbar.js';
+import Inputbox from './views/pages/Inputbox.js';
+
 
 import { parseRequestUrl } from './services/utils.js';
 
@@ -14,19 +16,23 @@ import { parseRequestUrl } from './services/utils.js';
 const routes = {
   '/': Home,
   '/alarm': Alarm,
+  '/alarm/:verb': Alarm,
   '/photos': Photo,
-  '/photos/:id': ItemShow,
-  '/memo': Memo
+  '/photos/:verb': ItemShow,
+  '/memo': Memo,
+  '/memo/:verb': Memo,
+  
 };
 
 /**
  * The router code. Takes a URL, checks against the list of
- * supported routes and then renders the corresponding content page.
+ * supported routes and then renders the corresponding main page.
  */
 const router = async () => {
   // Lazy load view element:
   const header = null || document.getElementById('header_root');
-  const content = null || document.getElementById('page_root');
+  const inputbox = null || document.getElementById('input_root');
+  const main = null || document.getElementById('page_root');
 
 
   // Destructure the parsed URl from the addressbar.
@@ -35,16 +41,21 @@ const router = async () => {
   // Parse the URL and if it has an id part, change it with the string ":id".
   const parsedUrl =
     (resource ? '/' + resource : '/') +
-    (id ? '/:id' : '') +
-    (verb ? '/' + verb : '');
+    (verb ? '/:verb' : '') +
+    (id ? '/' + id : '');
 
   // Render the header of the page.
-  header.innerHTML = await Navbar.render(resource);
+  header.innerHTML = await Navbar.render(resource, verb, id);
   await Navbar.after_render();
 
+
+  inputbox.innerHTML = await Inputbox.render(resource, verb, id);
   // Render the page from map of supported routes or render 404 page.
+  await Inputbox.after_render();
+
+
   const page = routes[parsedUrl] || Error404;
-  content.innerHTML = await page.render();
+  main.innerHTML = await page.render();
   await page.after_render();
 };
 
