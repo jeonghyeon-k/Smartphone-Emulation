@@ -28,9 +28,6 @@ const router = async () => {
   const header = null || document.getElementById('header_root');
   const content = null || document.getElementById('page_root');
 
-  // Render the header of the page.
-  header.innerHTML = await Navbar.render();
-  await Navbar.after_render();
 
   // Destructure the parsed URl from the addressbar.
   const { resource, id, verb } = parseRequestUrl();
@@ -40,6 +37,10 @@ const router = async () => {
     (resource ? '/' + resource : '/') +
     (id ? '/:id' : '') +
     (verb ? '/' + verb : '');
+
+  // Render the header of the page.
+  header.innerHTML = await Navbar.render(resource);
+  await Navbar.after_render();
 
   // Render the page from map of supported routes or render 404 page.
   const page = routes[parsedUrl] || Error404;
