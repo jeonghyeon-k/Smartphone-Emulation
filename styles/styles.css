@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+/* 전체 CSS */
 html,body {
     height: 100%;
 }
@@ -7,18 +8,67 @@ ul, li{
     margin: 0;
     padding: 0;
 }
+a:link { text-decoration: none;}
+a:visited { color:#111111; text-decoration: none;}
+a:hover { text-decoration: none;}
 
 li{
     list-style: none;
   }
 .container{
     max-width: 500px;
+    min-width: 390px;
     height: 100%;
     margin: 0 auto;
     padding: 0 10px;
-    border: 1px solid #000000;
+    background-color: #668EFD;
+    border-radius: 8px;
+}
+.main{
+    margin-top: 25px;
+    height: 100%;
+    background-color: #add8e6;
+}
+/*===================*/
+
+/* Navbar CSS */
+.navbar-box{
+    display: flex;
 }
 
+.navbar-box .navbtn{
+    width: 50px;
+    height: 30px;
+    margin-top: 15px;
+    text-align: center;
+    border: 1px solid #add8e6;
+    color: #add8e6;
+    background: #ffffff;
+    border-radius: 8px;
+}
+.navbar-box .back{
+    
+    
+}
+.navbar-box .navbar-time{
+    color: #ffffff;
+    text-align: center;
+    flex-grow: 1;
+}
+.navbar-box .new{
+
+}
+
+
+
+
+
+
+
+/*===================*/
+
+
+/* 사진화면 사진 CSS */
 .list {
     overflow-x: scroll;
     display: flex;
@@ -31,4 +81,28 @@ li{
 
 .list::-webkit-scrollbar { 
   display: none !important;
-}   
+}
+/*===================*/
+
+/* HOME화면 어플 CSS */
+.navbar-nav{
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+.nav-item{
+    width: 80px;
+    height: 80px;
+    margin: 0 20px;
+    background-color: #ffffff;
+    position:relative;
+    border-radius: 8px;
+}
+
+.nav-item .nav-link{
+    position:absolute;
+    left:25px;
+    top:27px;
+
+}
+/*===================*/
