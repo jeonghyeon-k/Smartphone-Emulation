@@ -2,9 +2,10 @@
 import Home from './views/pages/Home.js';
 import Alarm from './views/pages/Alarm.js';
 import Photo from './views/pages/Photos.js';
-import ItemShow from './views/pages/PhotoShow.js';
+import PhotoShow from './views/pages/PhotoShow.js';
 import Memo from './views/pages/Memo.js';
 import Error404 from './views/pages/Error404.js';
+
 
 import Navbar from './views/components/Navbar.js';
 import Inputbox from './views/pages/Inputbox.js';
@@ -17,15 +18,14 @@ import AlertAlarm from './views/pages/AlertAlarm.js';
 
 import { parseRequestUrl} from './services/ParseUrl.js';
 
-
-
 // List of supported routes. Any url other than these will render 404 page.
 const routes = {
   '/': Home,
   '/alarm': Alarm,
   '/alarm/:verb': Alarm,
   '/photos': Photo,
-  '/photos/:verb': ItemShow,
+  '/photos/:verb': Photo,
+  '/photos/:verb/:id': PhotoShow,
   '/memo': Memo,
   '/memo/:verb': Memo,
   '/memo/:verb/:id': MemoShow,
@@ -63,9 +63,8 @@ const router = async () => {
     await Inputbox.after_render();
   }
 
-
   const page = routes[parsedUrl] || Error404;
-  main.innerHTML = await page.render();
+  main.innerHTML = await page.render(resource, verb, id);
   await page.after_render(resource, verb, id);
 
   AlertAlarm.render(resource, verb, id);

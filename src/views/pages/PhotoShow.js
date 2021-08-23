@@ -2,26 +2,7 @@
  * Fetch data from external API.
  * @return {Array} Data fetched.
  */
-const getItems = async () => {
-  try {
-    // Set API url.
-    const apiUrl = `https://www.breakingbadapi.com/api/characters`;
-    // Create options for the fetch function.
-    const options = { cache: 'force-cache' };
-    // Get a response from the API.
-    const response = await fetch(apiUrl, options);
-    // Parse response into JSON.
-    const data = await response.json();
-    // Print fetched data to the console.
-    console.log('(App) Data fetched from API:', data);
-    // Return fetched data.
-    return data;
-  } catch (error) {
-    // Print catched error to the console.
-    console.log('(App) Error occured while getting data.', error);
-  }
-};
-
+ import {imageUrl} from '../../image'
 const Items = {
   /**
    * Render the page content.
@@ -29,15 +10,15 @@ const Items = {
   render: async () => {
 
     // Get items data.
-    const items = await getItems();
+    const items = ["Dog1","Dog2","Dog3","Dog4","Dog5","Dog6","Dog7","Dog8","Dog9","Dog10"]
     // Map over items and build card components.
     const itemList = items
       .map(
-        ({ name, img, char_id }) => /*html*/ `
+        (name,index) => /*html*/ `
         <div class="col-lg-3 col-md-4 col-sm-6">
-          <a href="/#/items/${char_id}">
-            <img src=${img} class="photo" alt=${name}>
-          </a>
+          <div class="photoitem" id =${index}>
+            <img src= "${imageUrl(name)}" class="photo">
+          </div>
         </div>
       `
       )
@@ -58,6 +39,26 @@ const Items = {
     const slider = document.querySelector('.list');
     let isMouseDown = false;
     let startX, scrollLeft;
+    let isclick = -1
+
+    const btnElement = document.getElementsByClassName("photoitem");
+
+    function onclick(e){
+      const itemElement = document.getElementById(e);
+      itemElement.style.border = `5px solid #ff7f00`
+      location.href=`/#/photos/show/${e}`;
+    }
+    for (let i=0; i < btnElement.length; i++) {
+      btnElement[i].onclick = function(){
+          const itemid = btnElement[i].id
+          if(isclick === itemid){
+            onclick(btnElement[i].id);
+          }else{
+            isclick = itemid
+          }
+          
+      }
+    };
   
     slider.addEventListener('mousedown', (e) => {
       isMouseDown = true;
