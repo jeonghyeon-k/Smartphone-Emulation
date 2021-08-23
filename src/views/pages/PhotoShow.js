@@ -1,15 +1,10 @@
-/**
- * Fetch data from external API.
- * @return {Array} Data fetched.
- */
+
  import {imageUrl} from '../../services/ImageUrl'
 
    // Get items data.
 const items = ["Dog1","Dog2","Dog3","Dog4","Dog5","Dog6","Dog7","Dog8","Dog9","Dog10"]
 const Items = {
-  /**
-   * Render the page content.
-   */
+
   render: async () => {
     // Map over items and build card components.
     const itemList = items
@@ -32,10 +27,7 @@ const Items = {
       </section>  
     `;
   },
-  /**
-   * All the code related to DOM interactions and controls go in here.
-   * This is a separate call as these can be registered only after the DOM has been painted.
-   */
+
   after_render: async (resource, verb, id) => {
 
     const content = null || document.getElementById('content');

@@ -1,6 +1,6 @@
 const Inputbox = {
     /**
-     * Render the component content.
+     * component를 렌더링 합니다.
      */
     render: async (resource, verb, id) => {
     let isverb = (verb === "new") ? "block" : "none";
@@ -49,10 +49,7 @@ const Inputbox = {
     }
       return htmlstream;
     },
-    /**
-     * All the code related to DOM interactions and controls go in here.
-     * This is a separate call as these can be registered only after the DOM has been painted.
-     */
+
      after_render: async () => {
         const btnElement = document.getElementById('btn-save');
         const textElement = document.getElementById('memo');

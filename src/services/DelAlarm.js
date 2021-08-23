@@ -1,7 +1,6 @@
 
 export const DelAlarm = (id,parsedUrl) => {
-    // Convert location hash into an url.
-
+    // 현재 시간의 알람을 alert하고 localStorage갱신합니다.
     let alarms = JSON.parse(localStorage.getItem('alarm'));
     alarms.splice(id, 1);
     localStorage.setItem("alarm", JSON.stringify(alarms));

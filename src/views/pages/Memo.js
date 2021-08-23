@@ -1,7 +1,5 @@
 const Memo = {
-  /**
-   * Render the page content.
-   */
+
   render: async () => {
     const localmemo = JSON.parse(localStorage.getItem('memo'));
     const memolist  = [];
@@ -23,10 +21,6 @@ const Memo = {
     </section>
     `;
   },
-  /**
-   * All the code related to DOM interactions and controls go in here.
-   * This is a separate call as these can be registered only after the DOM has been painted.
-   */
   after_render: async () => {
     const btnElement = document.getElementsByClassName("memobox output");
 

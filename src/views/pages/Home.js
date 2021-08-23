@@ -1,8 +1,6 @@
 const menus = {'alarm' : "알람", 'memo':"메모",'photos':'사진'}
 const Home = {
-  /**
-   * Render the page content.
-   */
+
   render: async () => {
 
     // localStorage 좌표 불러오기
@@ -14,7 +12,6 @@ const Home = {
       links.push('alarm', 'memo', 'photos');
     }
 
-    // Build html with navigation links.
     const navLinks = links
       .map(
         link =>
@@ -28,10 +25,7 @@ const Home = {
         </ul>
     `;
   },
-  /**
-   * All the code related to DOM interactions and controls go in here.
-   * This is a separate call as these can be registered only after the DOM has been painted.
-   */
+
   after_render: async () => {
     const ulElement = document.querySelector('ul');
     ulElement.addEventListener("click",function(e){

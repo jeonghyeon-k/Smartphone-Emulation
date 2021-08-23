@@ -1,8 +1,6 @@
 
 const Alarm = {
-  /**
-   * Render the page content.
-   */
+
    render: async () => {
     const localalarm = JSON.parse(localStorage.getItem('alarm'));
     const alarmlist  = []
@@ -27,10 +25,7 @@ const Alarm = {
     </section>
     `;
   },
-  /**
-   * All the code related to DOM interactions and controls go in here.
-   * This is a separate call as these can be registered only after the DOM has been painted.
-   */
+
   after_render: async () => {
     const btnElement = document.getElementsByClassName("btn delete");
     function onclick(e){

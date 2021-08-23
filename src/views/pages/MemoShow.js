@@ -1,7 +1,5 @@
 const MemoShow = {
-    /**
-     * Render the page content.
-     */
+
     render: async () => {
       const localmemo = JSON.parse(localStorage.getItem('memo'));
       const memolist  = [];
@@ -23,10 +21,7 @@ const MemoShow = {
       </section>
       `;
     },
-    /**
-     * All the code related to DOM interactions and controls go in here.
-     * This is a separate call as these can be registered only after the DOM has been painted.
-     */
+
     after_render: async (resource, verb, id) => {
         const textElement = document.getElementById(id);
         let count = 0

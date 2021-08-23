@@ -1,28 +1,18 @@
-/**
- * Parse current url and break it into resource, id and verb.
- * @return {Object} Path params.
- */
+
  export const parseRequestUrl = () => {
-    const alert = () => {
-    console.log("??")
-    return request;
-    };
-    // Convert location hash into an url.
+
+    // 위치 해시를 URL로 변환합니다.
     const path = location.hash.slice(2).toLowerCase() || '/';
   
-    // Split url into params array: [resource, id, verb].
+    // url을 params 배열로 분할합니다: [resource, id, verb].
     const params = path.split('/');
   
-    // Build request variable.
+
     const request = {
       resource: params[0] || null,
       verb: params[1] || null,
       id: params[2] || null
     };
-  
-    // Print it in the console.
-    console.log('(App) Parsed url:', request);
-  
-    // Return and object with params.
+
     return request;
   };
