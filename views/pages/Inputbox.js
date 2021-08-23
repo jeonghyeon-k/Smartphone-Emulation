@@ -43,7 +43,7 @@ const Inputbox = {
     }else if(resource === "memo"){
         htmlstream = `
         <div style="display: ${isverb};" class = "inputbox">
-            <textarea class="memobox" id="memo" name="memo" rows="4" cols="50" placeholder="메모를 입력하세요"></textarea>
+            <textarea class="memobox input" id="memo" name="memo" rows="4" cols="50" placeholder="메모를 입력하세요\n(띄어쓰기 : Shift + Enter)\n(입력 : Enter)"></textarea>
         </div>
         `
     }

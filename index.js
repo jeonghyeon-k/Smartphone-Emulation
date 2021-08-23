@@ -10,6 +10,8 @@ import Navbar from './views/components/Navbar.js';
 import Inputbox from './views/pages/Inputbox.js';
 
 import {DelAlarm} from './views/pages/DelAlarm.js';
+
+import MemoShow from './views/pages/MemoShow.js';
 import AlertAlarm from './views/pages/AlertAlarm.js';
 
 
@@ -26,6 +28,7 @@ const routes = {
   '/photos/:verb': ItemShow,
   '/memo': Memo,
   '/memo/:verb': Memo,
+  '/memo/:verb/:id': MemoShow,
 };
 
 /**
@@ -45,7 +48,8 @@ const router = async () => {
   // Parse the URL and if it has an id part, change it with the string ":id".
   const parsedUrl =
     (resource ? '/' + resource : '/') +
-    (verb ? '/:verb' : '');
+    (verb ? '/:verb' : '') +
+    (verb === "show" ? '/:id' : '');
 
   // Render the header of the page.
   header.innerHTML = await Navbar.render(resource, verb, id);
@@ -60,10 +64,9 @@ const router = async () => {
   }
 
 
-  
   const page = routes[parsedUrl] || Error404;
   main.innerHTML = await page.render();
-  await page.after_render();
+  await page.after_render(resource, verb, id);
 
   AlertAlarm.render(resource, verb, id);
 };
