@@ -50,7 +50,6 @@ const Items = {
             </div>
     `;
 
-
     const slider = document.querySelector('.list');
     let isMouseDown = false;
     let startX, scrollLeft;

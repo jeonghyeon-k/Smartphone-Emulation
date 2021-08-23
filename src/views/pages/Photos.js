@@ -3,14 +3,18 @@
  * @return {Array} Data fetched.
  */
  import {imageUrl} from '../../image'
+
+   // Get items data.
+const items = ["Dog1","Dog2","Dog3","Dog4","Dog5","Dog6","Dog7","Dog8","Dog9","Dog10"]
 const Items = {
   /**
    * Render the page content.
    */
   render: async () => {
 
-    // Get items data.
-    const items = ["Dog1","Dog2","Dog3","Dog4","Dog5","Dog6","Dog7","Dog8","Dog9","Dog10"]
+    
+
+  
     // Map over items and build card components.
     const itemList = items
       .map(
@@ -28,6 +32,7 @@ const Items = {
         <div class="list">
           ${itemList}
         </div>
+        <div id="content" class="content"></div>
       </section>  
     `;
   },
@@ -37,6 +42,15 @@ const Items = {
    */
   after_render: async (resource, verb, id) => {
     if(id === null) id = 0
+    const content = null || document.getElementById('content');
+    console.log(items[id]);
+    content.innerHTML= `
+            <div id="content" class="content">
+              <img src= "${imageUrl(items[id])}" class="contentitem">
+            </div>
+    `;
+
+
     const slider = document.querySelector('.list');
     let isMouseDown = false;
     let startX, scrollLeft;
