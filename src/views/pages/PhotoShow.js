@@ -3,14 +3,18 @@
  * @return {Array} Data fetched.
  */
  import {imageUrl} from '../../image'
+
+   // Get items data.
+const items = ["Dog1","Dog2","Dog3","Dog4","Dog5","Dog6","Dog7","Dog8","Dog9","Dog10"]
 const Items = {
   /**
    * Render the page content.
    */
   render: async () => {
 
-    // Get items data.
-    const items = ["Dog1","Dog2","Dog3","Dog4","Dog5","Dog6","Dog7","Dog8","Dog9","Dog10"]
+    
+
+  
     // Map over items and build card components.
     const itemList = items
       .map(
@@ -28,6 +32,7 @@ const Items = {
         <div class="list">
           ${itemList}
         </div>
+        <div id="content" class="content"></div>
       </section>  
     `;
   },
@@ -35,17 +40,26 @@ const Items = {
    * All the code related to DOM interactions and controls go in here.
    * This is a separate call as these can be registered only after the DOM has been painted.
    */
-  after_render: async () => {
+  after_render: async (resource, verb, id) => {
+
+    const content = null || document.getElementById('content');
+    console.log(items[id]);
+    content.innerHTML= `
+            <div id="content" class="content">
+              <img src= "${imageUrl(items[id])}" class="contentitem">
+            </div>
+    `;
+
+
     const slider = document.querySelector('.list');
     let isMouseDown = false;
     let startX, scrollLeft;
     let isclick = -1
 
     const btnElement = document.getElementsByClassName("photoitem");
-
+    const itemElement = document.getElementById(id);
+    itemElement.style.border = `5px solid #ff7f00`
     function onclick(e){
-      const itemElement = document.getElementById(e);
-      itemElement.style.border = `5px solid #ff7f00`
       location.href=`/#/photos/show/${e}`;
     }
     for (let i=0; i < btnElement.length; i++) {
@@ -59,7 +73,9 @@ const Items = {
           
       }
     };
-  
+    let scrollsize = 0
+    scrollsize =30+ (190*(id-1))
+    slider.scrollLeft = scrollsize;
     slider.addEventListener('mousedown', (e) => {
       isMouseDown = true;
       slider.classList.add('active');
@@ -71,6 +87,7 @@ const Items = {
     slider.addEventListener('mouseleave', () => {
       isMouseDown = false;
       slider.classList.remove('active');
+      
     });
     
     slider.addEventListener('mouseup', () => {
@@ -80,7 +97,6 @@ const Items = {
   
     slider.addEventListener('mousemove', (e) => {
       if (!isMouseDown) return;
-  
       e.preventDefault();
       const x = e.pageX - slider.offsetLeft;
       const walk = (x - startX) * 1;

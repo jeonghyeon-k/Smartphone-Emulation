@@ -1,7 +1,7 @@
 // Import pages, components and helper functions.
 import Home from './views/pages/Home.js';
 import Alarm from './views/pages/Alarm.js';
-import Photo from './views/pages/Photos.js';
+
 import PhotoShow from './views/pages/PhotoShow.js';
 import Memo from './views/pages/Memo.js';
 import Error404 from './views/pages/Error404.js';
@@ -16,6 +16,7 @@ import MemoShow from './views/pages/MemoShow.js';
 import AlertAlarm from './views/pages/AlertAlarm.js';
 
 
+import Photos from './views/pages/Photos.js';
 import { parseRequestUrl} from './services/ParseUrl.js';
 
 // List of supported routes. Any url other than these will render 404 page.
@@ -23,8 +24,8 @@ const routes = {
   '/': Home,
   '/alarm': Alarm,
   '/alarm/:verb': Alarm,
-  '/photos': Photo,
-  '/photos/:verb': Photo,
+  '/photos': Photos,
+  '/photos/:verb': Photos,
   '/photos/:verb/:id': PhotoShow,
   '/memo': Memo,
   '/memo/:verb': Memo,
@@ -66,7 +67,6 @@ const router = async () => {
   const page = routes[parsedUrl] || Error404;
   main.innerHTML = await page.render(resource, verb, id);
   await page.after_render(resource, verb, id);
-
   AlertAlarm.render(resource, verb, id);
 };
 
