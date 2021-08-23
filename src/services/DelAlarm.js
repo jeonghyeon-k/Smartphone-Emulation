@@ -4,6 +4,6 @@ export const DelAlarm = (id,parsedUrl) => {
     let alarms = JSON.parse(localStorage.getItem('alarm'));
     alarms.splice(id, 1);
     localStorage.setItem("alarm", JSON.stringify(alarms));
-    location.href= (parsedUrl) ? `/#${parsedUrl}`: `/#/alarm`;
+    location.href= parsedUrl ? `/#${parsedUrl}`: `/#/alarm`;
 
   };

@@ -35,7 +35,6 @@ const Home = {
         newlist.push(ulElement.children[i].id)
       }
       localStorage.setItem("app", JSON.stringify(newlist));
-      console.log(e.target)
       //이동
       location.href=`/#/${e.target.id}`;
     })

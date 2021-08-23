@@ -66,7 +66,6 @@ const Inputbox = {
                 let alarms = JSON.parse(localStorage.getItem('alarm')) || [];
                 alarms = [newvalue, ...alarms]
                 localStorage.setItem("alarm", JSON.stringify(alarms));
-                console.log("??")
                 location.href=`/#/alarm`;
             })
         }
@@ -96,7 +95,6 @@ const Inputbox = {
                         e.stopPropagation();
                     } else {
                         let memos = JSON.parse(localStorage.getItem('memo')) || [];
-                        console.log(this.value)
                         memos = [this.value, ...memos]
                         localStorage.setItem("memo", JSON.stringify(memos));
                         location.href=`/#/memo`;

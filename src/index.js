@@ -53,7 +53,7 @@ const router = async () => {
 
   // input박스를 렌더링합니다
   if(verb === "del") {
-    DelAlarm(id);
+    DelAlarm(id,null);
   }else{
     inputbox.innerHTML = await Inputbox.render(resource, verb, id);
     // Render the page from map of supported routes or render 404 page.

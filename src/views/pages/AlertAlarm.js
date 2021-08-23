@@ -3,11 +3,10 @@ import {DelAlarm} from '../../services/DelAlarm';
 const AlertAlarm = {
 
      render: async (resource, verb, id) => {
-
+        
         const parsedUrl =
         (resource ? '/' + resource : '/') +
         (verb ? '/' + verb : '');
-        
         function alert(index){
             window.alert("알람",false)
             if(resource==="alarm"){
@@ -30,12 +29,13 @@ const AlertAlarm = {
             }
             for(let i=0;i<locallist.length;i++){
               const item = locallist[i]
-              const localhours = (item.moon==="오전")? item.hour : Number(item.hour)+12;
+              const localhours = (item.moon==="오전")? Number(item.hour) : Number(item.hour)+12;
               const localMinutes = Number(item.minute);
               alarmlist.push(`${localhours}${localMinutes}`)
             }
             for(let i=0;i<alarmlist.length;i++){
               const item = alarmlist[i]
+
               if(item === currenttime){
                 alert(i);
               }

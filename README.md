@@ -1,8 +1,8 @@
 # 스마트폰 에물레이션
 
-<br/>
+## [ ` 👉 시연 영상 ` ](https://drive.google.com/file/d/1q-NbsRpTOLqtDVsrOOJkch3QKcohj0R1/view?usp=sharing)
 
-[ 시연 영상](https://drive.google.com/file/d/1q-NbsRpTOLqtDVsrOOJkch3QKcohj0R1/view?usp=sharing)
+<img src="https://github.com/jeonghyeon-k/Smartphone-Emulation/blob/master/etc/show.gif?raw=true">
 
 <br/>
 
@@ -146,3 +146,20 @@ services는 내부의 page는 내부 화면, 동작 관계 없이 작동되어�
 - [ㅇ] 리스트에서 사진을 선택 화면 리스트에 Border등이 생겨 해당 사진이 선택되었다는 표시가 야합니다.
 - [ ㅇ] 선택된 사진은 아래에 표시되어야 하고, 가로 세로 중앙 정렬이며 화면에 딱 맞게 줄어들어야 합니다.
 
+### 화면
+<br/>
+ &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<홈화면> &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <알람화면>
+<br/>
+<img src="./etc/홈화면.png" alt="drawing" width="197"/>
+<img src="./etc/알람화면.png" alt="drawing" width="200"/>
+<br/>
+ &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<메모화면> &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <사진화면>
+<br/>
+<img src="./etc/메모화면.png" alt="drawing" width="200"/>
+<img src="./etc/포토화면.png" alt="drawing" width="200"/>
+
+<br/>
+<br/>
+<br/>
+
+---
