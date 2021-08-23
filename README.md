@@ -1,8 +1,8 @@
 # 스마트폰 에물레이션
 
-## [ ` 👉 시연 영상 ` ](https://drive.google.com/file/d/1q-NbsRpTOLqtDVsrOOJkch3QKcohj0R1/view?usp=sharing)
+## [ ` 👉 시연 영상 ` ](https://drive.google.com/file/d/1QOExPOYoQA6IBa2KYZeJJU6byoCYxbar/view?usp=sharing)
 
-<img src="https://github.com/jeonghyeon-k/Smartphone-Emulation/blob/master/etc/show.gif?raw=true">
+<img src="https://github.com/jeonghyeon-k/Smartphone-Emulation/blob/main/etc/show.gif?raw=true">
 
 <br/>
 
