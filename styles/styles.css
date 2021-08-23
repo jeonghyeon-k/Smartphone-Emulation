@@ -3,6 +3,9 @@
 /* 전체 CSS */
 html,body {
     height: 100%;
+    margin: 0;
+    padding: 0;
+    
 }
 ul, li{
     margin: 0;
@@ -25,8 +28,9 @@ li{
     border-radius: 8px;
 }
 .main{
-    margin-top: 25px;
-    height: 100%;
+    margin: 0;
+    padding: 0;
+    height: 700px;
     background-color: #add8e6;
 }
 /*===================*/
@@ -34,6 +38,7 @@ li{
 /* Navbar CSS */
 .navbar-box{
     display: flex;
+    margin-bottom: 25px;
 }
 
 .navbar-box .navbtn{
@@ -46,19 +51,12 @@ li{
     background: #ffffff;
     border-radius: 8px;
 }
-.navbar-box .back{
-    
-    
-}
+
 .navbar-box .navbar-time{
     color: #ffffff;
     text-align: center;
     flex-grow: 1;
 }
-.navbar-box .new{
-
-}
-
 
 
 
@@ -102,7 +100,51 @@ li{
 .nav-item .nav-link{
     position:absolute;
     left:25px;
-    top:27px;
+    top:30px;
 
 }
 /*===================*/
+
+.memobox{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-size: 16px;
+    overflow:scroll;
+}
+
+.inputbox{
+    font-size: 20px;
+    width: 100%;
+    min-height: 50px;
+    background-color: #ffffff;
+}
+.inputbox .btn{
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+    float: right;
+}
+.inputbox .selectbox{
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+
+.alarmbox{
+    margin-top: 20px;
+}
+.alarmbox .alarmItem{
+    height: 40px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
+    background-color: #ffffff;
+}
+.alarmbox .btn{
+    margin-right: 10px;
+    font-size: 20px;
+    float: right;
+}

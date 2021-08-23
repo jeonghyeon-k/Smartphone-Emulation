@@ -3,6 +3,10 @@
  * @return {Object} Path params.
  */
  export const parseRequestUrl = () => {
+    const alert = () => {
+    console.log("??")
+    return request;
+    };
     // Convert location hash into an url.
     const path = location.hash.slice(2).toLowerCase() || '/';
   
@@ -22,4 +26,3 @@
     // Return and object with params.
     return request;
   };
-  

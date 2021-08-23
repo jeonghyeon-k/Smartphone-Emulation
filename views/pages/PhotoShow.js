@@ -1,5 +1,5 @@
 // Import utils to extract id from url.
-import { parseRequestUrl } from '../../services/utils.js';
+import { parseRequestUrl } from '../../services/ParseUrl.js';
 
 /**
  * Fetch data from external API.

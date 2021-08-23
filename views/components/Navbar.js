@@ -51,7 +51,7 @@ const Navbar = {
     };
     // Set node content and update it every second.
     updateTime();
-    // setInterval(updateTime, 1000);
+    setInterval(updateTime, 1000);
   }
 };
 

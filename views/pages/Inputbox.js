@@ -69,7 +69,7 @@ const Inputbox = {
                 let alarms = JSON.parse(localStorage.getItem('alarm')) || [];
                 alarms = [newvalue, ...alarms]
                 localStorage.setItem("alarm", JSON.stringify(alarms));
-
+                console.log("??")
                 location.href=`/#/alarm`;
             })
         }

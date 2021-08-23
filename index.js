@@ -9,8 +9,13 @@ import Error404 from './views/pages/Error404.js';
 import Navbar from './views/components/Navbar.js';
 import Inputbox from './views/pages/Inputbox.js';
 
+import {DelAlarm} from './views/pages/DelAlarm.js';
+import AlertAlarm from './views/pages/AlertAlarm.js';
 
-import { parseRequestUrl } from './services/utils.js';
+
+import { parseRequestUrl} from './services/ParseUrl.js';
+
+
 
 // List of supported routes. Any url other than these will render 404 page.
 const routes = {
@@ -21,7 +26,6 @@ const routes = {
   '/photos/:verb': ItemShow,
   '/memo': Memo,
   '/memo/:verb': Memo,
-  
 };
 
 /**
@@ -41,22 +45,27 @@ const router = async () => {
   // Parse the URL and if it has an id part, change it with the string ":id".
   const parsedUrl =
     (resource ? '/' + resource : '/') +
-    (verb ? '/:verb' : '') +
-    (id ? '/' + id : '');
+    (verb ? '/:verb' : '');
 
   // Render the header of the page.
   header.innerHTML = await Navbar.render(resource, verb, id);
   await Navbar.after_render();
 
+  if(verb === "del") {
+    DelAlarm(id);
+  }else{
+    inputbox.innerHTML = await Inputbox.render(resource, verb, id);
+    // Render the page from map of supported routes or render 404 page.
+    await Inputbox.after_render();
+  }
 
-  inputbox.innerHTML = await Inputbox.render(resource, verb, id);
-  // Render the page from map of supported routes or render 404 page.
-  await Inputbox.after_render();
 
-
+  
   const page = routes[parsedUrl] || Error404;
   main.innerHTML = await page.render();
   await page.after_render();
+
+  AlertAlarm.render(resource, verb, id);
 };
 
 /**
@@ -68,3 +77,8 @@ window.addEventListener('hashchange', router);
 
 // Listen on page load.
 window.addEventListener('load', router);
+
+
+
+
+
