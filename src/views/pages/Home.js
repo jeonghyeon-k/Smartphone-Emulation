@@ -1,10 +1,10 @@
+const menus = {'alarm' : "알람", 'memo':"메모",'photos':'사진'}
 const Home = {
   /**
    * Render the page content.
    */
   render: async () => {
-    // Define a list of navbar links.
-    const menus = {'alarm' : "알람", 'memo':"메모",'photos':'사진'}
+
     // localStorage 좌표 불러오기
     const applications = JSON.parse(localStorage.getItem('app'));
     const links  = [];
@@ -23,11 +23,9 @@ const Home = {
       )
       .join('\n');
     return /*html*/ `
-      <section>
         <ul class="navbar-nav">
         ${navLinks}
         </ul>
-      </section>
     `;
   },
   /**
@@ -37,7 +35,6 @@ const Home = {
   after_render: async () => {
     const ulElement = document.querySelector('ul');
     ulElement.addEventListener("click",function(e){
-
       // 이동시 어플 현 위치 저장
       const newlist  = [];
       for (let i = 0; i < ulElement.children.length; i++) {

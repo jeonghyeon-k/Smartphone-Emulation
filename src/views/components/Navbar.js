@@ -16,7 +16,6 @@ const Navbar = {
       newbtn = "block";
     }
     return /*html*/ `
-      
       <nav class="navbar-box">
         <a class="navbtn back" href="/#" style="display: ${backbtn};">
           back

@@ -1,4 +1,4 @@
-import {DelAlarm} from './DelAlarm.js';
+import {DelAlarm} from '../../services/DelAlarm';
 
 const AlertAlarm = {
 

@@ -1,4 +1,3 @@
-import {DelAlarm} from './DelAlarm.js';
 
 const Alarm = {
   /**

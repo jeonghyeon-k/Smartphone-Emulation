@@ -2,7 +2,7 @@
  * Fetch data from external API.
  * @return {Array} Data fetched.
  */
- import {imageUrl} from '../../image'
+ import {imageUrl} from '../../services/ImageUrl'
 
    // Get items data.
 const items = ["Dog1","Dog2","Dog3","Dog4","Dog5","Dog6","Dog7","Dog8","Dog9","Dog10"]
@@ -12,9 +12,6 @@ const Items = {
    */
   render: async () => {
 
-    
-
-  
     // Map over items and build card components.
     const itemList = items
       .map(
@@ -43,7 +40,7 @@ const Items = {
   after_render: async (resource, verb, id) => {
     if(id === null) id = 0
     const content = null || document.getElementById('content');
-    console.log(items[id]);
+
     content.innerHTML= `
             <div id="content" class="content">
               <img src= "${imageUrl(items[id])}" class="contentitem">

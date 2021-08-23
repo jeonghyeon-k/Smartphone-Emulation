@@ -1,22 +1,18 @@
 // Import pages, components and helper functions.
 import Home from './views/pages/Home.js';
 import Alarm from './views/pages/Alarm.js';
-
+import MemoShow from './views/pages/MemoShow.js';
+import AlertAlarm from './views/pages/AlertAlarm.js';
+import Photos from './views/pages/Photos.js';
 import PhotoShow from './views/pages/PhotoShow.js';
 import Memo from './views/pages/Memo.js';
 import Error404 from './views/pages/Error404.js';
 
 
+import Inputbox from './views/components/Inputbox.js';
 import Navbar from './views/components/Navbar.js';
-import Inputbox from './views/pages/Inputbox.js';
 
-import {DelAlarm} from './views/pages/DelAlarm.js';
-
-import MemoShow from './views/pages/MemoShow.js';
-import AlertAlarm from './views/pages/AlertAlarm.js';
-
-
-import Photos from './views/pages/Photos.js';
+import {DelAlarm} from './services/DelAlarm.js';
 import { parseRequestUrl} from './services/ParseUrl.js';
 
 // List of supported routes. Any url other than these will render 404 page.
@@ -40,7 +36,7 @@ const router = async () => {
   // Lazy load view element:
   const header = null || document.getElementById('header_root');
   const inputbox = null || document.getElementById('input_root');
-  const main = null || document.getElementById('page_root');
+  const main = null || document.getElementById('main_root');
 
 
   // Destructure the parsed URl from the addressbar.
