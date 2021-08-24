@@ -32,12 +32,15 @@ module.exports = {
       {
         test: /\.(gif|svg|jpg|png)$/,
         loader: "file-loader",
+         options:{
+           publicPath: resolve(__dirname, './src/img'),
+           name : "[name].[ext]?[hash]",
+         }
       }
     ]
   },
   devServer:{
     host: 'localhost',
     port: 3000,
-    historyApiFallback: true
   }
 }

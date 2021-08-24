@@ -1,6 +1,4 @@
 
- import {imageUrl} from '../../services/ImageUrl'
-
    // Get items data.
 const items = ["Dog1","Dog2","Dog3","Dog4","Dog5","Dog6","Dog7","Dog8","Dog9","Dog10"]
 const Items = {
@@ -12,7 +10,7 @@ const Items = {
         (name,index) => /*html*/ `
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="photoitem" id =${index}>
-            <img src= "${imageUrl(name)}" class="photo">
+            <img src= "${name}.png" class="photo">
           </div>
         </div>
       `
@@ -33,7 +31,7 @@ const Items = {
     const content = null || document.getElementById('content');
     content.innerHTML= `
             <div id="content" class="content">
-              <img src= "${imageUrl(items[id])}" class="contentitem">
+              <img src= "${items[id]}.png" class="contentitem">
             </div>
     `;
 
