@@ -4,8 +4,9 @@ const AlertAlarm = {
   render: async (resource, verb, id) => {
     const parsedUrl =
       (resource ? "/" + resource : "/") + (verb ? "/" + verb : "");
-    function alert(index) {
-      window.alert("알람", false);
+    function alert(index,item) {
+      const message = `${item.moon} ${item.hour}시 ${item.minute}분 알람 !! `;
+      window.alert(message, false);
       if (resource === "alarm") {
         location.href = `/#/alarm/del/${index}`;
       } else {
@@ -33,9 +34,8 @@ const AlertAlarm = {
       }
       for (let i = 0; i < alarmlist.length; i++) {
         const item = alarmlist[i];
-
         if (item === currenttime) {
-          alert(i);
+          alert(i,localalarm[i]);
         }
       }
     };
