@@ -1,5 +1,4 @@
 const Error404 = {
-
   render: async () => {
     return /*html*/ `
       <section>
@@ -7,6 +6,6 @@ const Error404 = {
       </section>
     `;
   },
-  after_render: async () => {}
+  after_render: async () => {},
 };
 export default Error404;

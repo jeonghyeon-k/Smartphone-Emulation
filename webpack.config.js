@@ -1,16 +1,16 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const path = require('path')
+const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 
 const {resolve} = require('path')
 
 module.exports = {
   mode : process.env.NODE_ENV || 'development',
   entry: {
-    app: path.join(__dirname,'./src/index.js'),
+    app: resolve(__dirname,'./src/index.js'),
   },
   output: {
     filename: '[name].js',
-    path: resolve(__dirname, './src'),
+    path: resolve(__dirname, './dist'),
   },
 
   plugins: [
@@ -21,7 +21,8 @@ module.exports = {
         removeComments: true,
     } : false,
     hash: true 
-    })
+    }),
+    new CleanWebpackPlugin()
   ],
   module: {
     rules: [
@@ -33,7 +34,7 @@ module.exports = {
         test: /\.(gif|svg|jpg|png)$/,
         loader: "file-loader",
          options:{
-           publicPath: resolve(__dirname, './src/img'),
+           publicPath: resolve(__dirname, './dist/img'),
            name : "[name].[ext]?[hash]",
          }
       }
@@ -42,5 +43,6 @@ module.exports = {
   devServer:{
     host: 'localhost',
     port: 3000,
+    historyApiFallback: true
   }
 }

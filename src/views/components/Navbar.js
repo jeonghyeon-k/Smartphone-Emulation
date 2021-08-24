@@ -4,14 +4,14 @@ const Navbar = {
    */
   render: async (resource, id, verb) => {
     let backbtn = "none";
-    let newbtn  = "none";
-    if (resource === null){
+    let newbtn = "none";
+    if (resource === null) {
       backbtn = "none";
       newbtn = "none";
-    }else if(resource === 'photos'){
+    } else if (resource === "photos") {
       backbtn = "block";
       newbtn = "none";
-    }else{
+    } else {
       backbtn = "block";
       newbtn = "block";
     }
@@ -28,19 +28,28 @@ const Navbar = {
     `;
   },
 
-   after_render: async () => {
-
-    const time = document.querySelector('#time');
+  after_render: async () => {
+    const time = document.querySelector("#time");
     const updateTime = () => {
-        const newDate = new Date();
-        const newdata = newDate.getFullYear() +'년 '+ newDate.getMonth() +'월 '
-                            + newDate.getDate() +'일 '+ newDate.getHours() +'시 '
-                            + newDate.getMinutes() +'분'+ newDate.getSeconds() +'초';
+      const newDate = new Date();
+      const newdata =
+        newDate.getFullYear() +
+        "년 " +
+        newDate.getMonth() +
+        "월 " +
+        newDate.getDate() +
+        "일 " +
+        newDate.getHours() +
+        "시 " +
+        newDate.getMinutes() +
+        "분" +
+        newDate.getSeconds() +
+        "초";
       time.innerHTML = `${newdata}`;
     };
-    updateTime()
+    updateTime();
     setInterval(updateTime, 1000);
-  }
+  },
 };
 
 export default Navbar;
