@@ -27,10 +27,10 @@ const Items = {
       .join("\n");
     return /*html*/ `
       <section class="container-md">
-        <div class="list">
+        <div class="photolist">
           ${itemList}
         </div>
-        <div id="content" class="content"></div>
+        <div id="content" class="photobox"></div>
       </section>  
     `;
   },
@@ -38,12 +38,10 @@ const Items = {
   after_render: async (resource, verb, id) => {
     const content = null || document.getElementById("content");
     content.innerHTML = `
-            <div id="content" class="content">
               <img src= "${items[id]}.png" class="contentitem">
-            </div>
     `;
 
-    const slider = document.querySelector(".list");
+    const slider = document.querySelector(".photolist");
     let isMouseDown = false;
     let startX, scrollLeft;
     let isclick = -1;

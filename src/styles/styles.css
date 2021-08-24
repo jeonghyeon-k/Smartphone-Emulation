@@ -29,9 +29,15 @@ a:hover {
   min-width: 390px;
   height: 100%;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0px;
   background-color: #668efd;
   border-radius: 8px;
+}
+.mainbox{
+  height: 100%;
+}
+.photobox{
+  height: 100%;
 }
 
 /*===================*/
@@ -40,6 +46,7 @@ a:hover {
 .navbar-box {
   display: flex;
   margin-bottom: 25px;
+  padding: 0 10px;
 }
 
 .navbar-box .navbtn {
@@ -63,9 +70,11 @@ a:hover {
 /*===================*/
 
 /* 사진화면 사진 CSS */
-.list {
+.photolist {
+  background-color: #668efd;
   overflow-x: scroll;
   display: flex;
+  padding-bottom: 20px;
 }
 .photo {
   width: 100%;
@@ -78,15 +87,19 @@ a:hover {
   height: 170px;
   border-radius: 40px;
 }
+.photobox{
+  height: 100%;
+  margin-top: 100px;
+}
 .content {
-  margin-top: 70px;
+
 }
 .contentitem {
   width: 100%;
   height: 100%;
 }
 
-.list::-webkit-scrollbar {
+.photolist::-webkit-scrollbar {
   display: none !important;
 }
 /*===================*/
@@ -149,8 +162,7 @@ a:hover {
   height: 40px;
   margin-bottom: 15px;
   font-size: 20px;
-  padding-top: 10px;
-  padding-left: 10px;
+  padding : 10px;
   background-color: #ffffff;
 }
 .alarmbox .btn {

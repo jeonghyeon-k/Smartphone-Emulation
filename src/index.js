@@ -51,6 +51,8 @@ const router = async () => {
   header.innerHTML = await Navbar.render(resource, verb, id);
   await Navbar.after_render();
 
+  main.style.backgroundColor = (resource==="photos")? `#111111` : ``;
+
   // input박스를 렌더링합니다
   if (verb === "del") {
     DelAlarm(id, null);

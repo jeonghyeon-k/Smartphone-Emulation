@@ -25,10 +25,10 @@ const Items = {
       .join("\n");
     return /*html*/ `
       <section class="container-md">
-        <div class="list">
+        <div class="photolist">
           ${itemList}
         </div>
-        <div id="content" class="content"></div>
+        <div id="content" class="photobox"></div>
       </section>  
     `;
   },
@@ -43,7 +43,7 @@ const Items = {
             </div>
     `;
 
-    const slider = document.querySelector(".list");
+    const slider = document.querySelector(".photolist");
     let isMouseDown = false;
     let startX, scrollLeft;
     let isclick = -1;
