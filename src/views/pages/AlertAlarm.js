@@ -1,16 +1,16 @@
 import { DelAlarm } from "../../services/DelAlarm";
-
+import { parseRequestUrl } from "../../services/ParseUrl.js";
 const AlertAlarm = {
   render: async (resource, verb, id) => {
-    const parsedUrl =
-      (resource ? "/" + resource : "/") + (verb ? "/" + verb : "");
+
     function alert(index,item) {
       const message = `${item.moon} ${item.hour}시 ${item.minute}분 알람 !! `;
+      const { resource, id, verb } = parseRequestUrl();
       window.alert(message, false);
       if (resource === "alarm") {
         location.href = `/#/alarm/del/${index}`;
       } else {
-        DelAlarm(index, parsedUrl);
+        DelAlarm(index);
       }
     }
 

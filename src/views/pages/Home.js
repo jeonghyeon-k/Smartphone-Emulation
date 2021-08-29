@@ -1,7 +1,8 @@
 const menus = { alarm: "알람", memo: "메모", photos: "사진" };
 const Home = {
   render: async () => {
-
+    const main = null || document.getElementById("main_root");
+    main.classList.remove("active")
     // localStorage 좌표 불러오기
     const applications = JSON.parse(localStorage.getItem("app"));
     const links = [];
@@ -36,7 +37,7 @@ const Home = {
     });
 
     const btnElement = document.getElementsByClassName("nav-item");
-    let index = 0
+
     for (let i = 0; i < btnElement.length; i++) {
         btnElement[i].ondragstart = function (e) {
           e.dataTransfer.setData("id", e.target.id);
@@ -50,9 +51,9 @@ const Home = {
     document.ondrop = async function (e) {
       e.stopPropagation();
       e.preventDefault();
+      if(menus[e.target.id] === undefined) return
       const Element = document.getElementById(e.dataTransfer.getData("id"));
-      const target = (e.target.class === "nav-link")? e.target.parentNode : e.target
-      console.log(e.target)
+      const target = e.target
       const A = Element.getBoundingClientRect().left
       const B = target.getBoundingClientRect().left
       if(A>B){

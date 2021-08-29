@@ -36,6 +36,9 @@ a:hover {
 .mainbox{
   height: 100%;
 }
+.mainbox.active{
+  background-color: #111111;
+}
 .photobox{
   height: 100%;
 }

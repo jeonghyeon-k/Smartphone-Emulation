@@ -11,7 +11,11 @@ const items = [
   "Dog10",
 ];
 const Items = {
+
   render: async () => {
+    const main = null || document.getElementById("main_root");
+    main.classList.add("active")
+
     const itemList = items
       .map(
         (name, index) => /*html*/ `

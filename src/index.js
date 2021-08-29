@@ -51,16 +51,16 @@ const router = async () => {
   header.innerHTML = await Navbar.render(resource, verb, id);
   await Navbar.after_render();
 
-  main.style.backgroundColor = (resource==="photos")? `#111111` : ``;
+  //main.style.backgroundColor = (resource==="photos")? `#111111` : ``;
 
   // input박스를 렌더링합니다
   if (verb === "del") {
     DelAlarm(id, null);
-  } else {
-    inputbox.innerHTML = await Inputbox.render(resource, verb, id);
-    // Render the page from map of supported routes or render 404 page.
-    await Inputbox.after_render();
   }
+  inputbox.innerHTML = await Inputbox.render(resource, verb, id);
+  // Render the page from map of supported routes or render 404 page.
+  await Inputbox.after_render();
+  
   // main박스를 렌더링합니다
   const page = routes[parsedUrl] || Error404;
   main.innerHTML = await page.render(resource, verb, id);

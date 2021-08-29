@@ -17,11 +17,11 @@ const Navbar = {
     }
     return /*html*/ `
       <nav class="navbar-box">
-        <a class="navbtn back" href="/#" style="display: ${backbtn};">
+        <a class="navbtn back" href="/#" style="display: ${backbtn};" draggable="false">
           back
         </a>
         <p class="navbar-time" id="time"></p>  
-        <a class="navbtn new" href="/#/${resource}/new" style="display: ${newbtn};">
+        <a class="navbtn new" href="/#/${resource}/new" style="display: ${newbtn};" draggable="false">
           new
         </a>
       </nav>
