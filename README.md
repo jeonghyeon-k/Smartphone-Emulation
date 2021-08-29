@@ -2,17 +2,25 @@
 
 ## [ ` 👉 시연 영상 ` ](https://drive.google.com/file/d/1mR1xzr0grYjrn3_eYrvzd6yMtDJQBVIX/view?usp=sharing)
 
-### 홈화면
-<img src="https://https://github.com/jeonghyeon-k/Smartphone-Emulation-after/blob/main/etc/home.gif?raw=true">
+<br/>
 
-### 사진화면
-<img src="https://github.com/jeonghyeon-k/Smartphone-Emulation/blob/main/etc/photo.gif?raw=true">
+### 홈
+<img src="https://github.com/jeonghyeon-k/Smartphone-Emulation-after/blob/main/etc/home.gif?raw=true">
 
-### 메모화면
-<img src="https://github.com/jeonghyeon-k/Smartphone-Emulation/blob/main/etc/memo.gif?raw=true">
+<br/>
 
-### 알람화면
-<img src="https://github.com/jeonghyeon-k/Smartphone-Emulation/blob/main/etc/alarm.gif?raw=true">
+### 사진
+<img src="https://github.com/jeonghyeon-k/Smartphone-Emulation-after/blob/main/etc/photo.gif?raw=true">
+
+<br/>
+
+### 메모
+<img src="https://github.com/jeonghyeon-k/Smartphone-Emulation-after/blob/main/etc/memo.gif?raw=true">
+
+<br/>
+
+### 알람
+<img src="https://github.com/jeonghyeon-k/Smartphone-Emulation-after/blob/main/etc/alarm.gif?raw=true">
 
 
 
